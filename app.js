@@ -88,14 +88,16 @@ class DecisionTree extends React.Component {
 }
        
 
-// Initialize the button click handler
+// Remove any existing event listeners for the button
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('decision-tree-button');
-    if (button) {
-        button.addEventListener('click', () => {
+    const startButton = document.getElementById('decision-tree-button');
+    if (startButton) {
+        startButton.onclick = () => {
             const root = document.getElementById('root');
-            ReactDOM.render(<DecisionTree />, root);
-            button.style.display = 'none'; // Hide the button after clicking
-        });
+            if (root) {
+                ReactDOM.render(<DecisionTree />, root);
+                startButton.style.display = 'none'; // Hide the button after clicking
+            }
+        };
     }
 });
