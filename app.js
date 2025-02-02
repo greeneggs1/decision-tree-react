@@ -1,3 +1,4 @@
+import { DecisionTreeVisual } from './components/DecisionTreeVisual';
 class DecisionTree extends React.Component {
     constructor(props) {
         super(props);
