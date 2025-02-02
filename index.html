@@ -16,6 +16,13 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel" src="app.js"></script>
+    <script type="
+<script>
+  document.getElementById('decision-tree-button').addEventListener('click', function() {
+    const rootElement = document.createElement('div');
+    document.body.appendChild(rootElement);
+    ReactDOM.render(<DecisionTree />, rootElement);
+  });
+</script>text/babel" src="app.js"></script>
 </body>
 </html>
