@@ -78,3 +78,7 @@ class DecisionTree extends React.Component {
 }
 
 ReactDOM.render(<DecisionTree />, document.getElementById('root'));
+
+document.getElementById('decision-tree-button').addEventListener('click', function() {
+    ReactDOM.render(<DecisionTree />, document.getElementById('root'));
+});
