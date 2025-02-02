@@ -58,7 +58,29 @@ class DecisionTree extends React.Component {
                     <button onClick={() => this.setState({ currentStep: 0, answers: [] })}>Restart</button>
                 </div>
             );
-        }
+     sendResultsToBackend = () => {
+    const resultData = {
+        projectName: this.state.projectName,
+        answers: this.state.answers,
+        result: this.state.currentStep === steps.length ? result : 'Decline or refer'
+    };
+
+    fetch('/api/results', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+};
+   }
 
         return (
             <div>
